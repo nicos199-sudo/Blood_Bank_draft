@@ -1,0 +1,103 @@
+{% extends 'app/main.html' %}
+{%  include 'app/status.html' %}
+{% load static %}
+
+{% block content %} 
+<body style="    margin: 0;
+font-family: Podkova,serif;
+font-size: 17px;background-color: #212529;">
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner" style=" position: relative; width: 1349px; overflow: hidden; height: 500px;">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="{% static 'images/slider3.jpg' %}" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{% static 'images/slide2.jpg' %}" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="{% static 'images/slide1.jpg' %}" alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <div>
+    <img src="{% static 'images/Capture.JPG' %}" alt="" style="width: 1349px;">
+  </div>
+
+<br>
+
+  <div class="card" style="width: 18rem;margin-top: -119px;
+  margin-left: 76px;box-shadow: 5px 10px 8px #888888;border-radius: 9px;background-color: azure;
+">
+    <img src="{% static 'images/slide1.jpg' %}" class="card-img-top" alt="..." style="box-shadow: 5px 10px 8px #888888;    height: 157px;
+    border-style: groove;border-radius: 9px;">
+    <div class="card-body">
+      <h5 class="card-title">Qu'est-ce que le sang?</h5>
+      <p class="card-text">Le sang est composé de quatre composants principaux. Globules rouges, plaquettes, plasma et globules blancs. Chaque don de sang total peut sauver jusqu'à trois vies</p>
+     <!--  <a href="#" class="btn btn-primary">Go somewhere</a>
+   -->  </div>
+  </div>
+  <div class="card1" style="width: 18rem;margin-top: -373px;
+  margin-left: 536px;box-shadow: 5px 10px 8px #888888;border-radius: 9px;background-color: azure;
+">
+    <img src="{% static 'images/bd.jpg' %}" class="card-img-top" alt="..." style="box-shadow: 5px 10px 8px #888888;    height: 157px;
+    border-style: groove;border-radius: 9px;">
+    <div class="card-body">
+      <h5 class="card-title">Don du Sang</h5>
+      <p class="card-text">Un don de sang se produit lorsqu'une personne se fait volontairement prélever du sang .Le don peut être du sang total ou directement de composants spécifiques.</p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a>
+     --></div>
+  </div>
+  <div class="card2" style="width: 18rem;margin-top: -378px;
+  margin-left: 997px;box-shadow: 5px 10px 8px #888888;border-radius: 9px;background-color: azure;">
+    <img src="{% static 'images/slide1.jpg' %}" class="card-img-top" alt="..." style="box-shadow: 5px 10px 8px #888888;height: 157px;
+    border-style: groove;border-radius: 9px;">
+    <div class="card-body">
+      <h5 class="card-title">Sauvons des Vies</h5>
+      <p class="card-text">Donnez le sang pour sauver des viesLes dons de produits sanguins permettent de sauver la vie de milliers de patients victimes de maladies graves du sang ou d’hémorragies massives</p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a>
+    --> </div>
+  </div>
+  <br>
+  
+    <div style="width: 765px;
+    margin-left: 47px;border-radius: 9px;box-shadow: 5px 10px 8px #888888;background-color: azure;
+">
+<center>
+      <h1 style="font-weight: bold; ">What is Lorem Ipsum?</h1>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      </p>
+    </center>
+    </div>
+    <div style="margin-left: 525px;
+    margin-top: -314px;">
+      <img src="{% static 'images/slide1.jpg' %}" alt="" style="width: 470px;
+      margin-left: 305px;">
+    </div>
+    
+    <div style="margin-top: 71px;">
+      <center> <hr style="width: 642px;">
+      
+      <footer>
+        copyright@Akaguriro.com-2020
+     </footer>
+    </center>
+    </div>
+   
+  
+</body>
+
+  {% endblock content %}

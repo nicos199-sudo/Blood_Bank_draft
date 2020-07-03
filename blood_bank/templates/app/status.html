@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#total-orders{
+    background-color: #4cb4c7;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+
+#orders-delivered{
+    background-color: #7abecc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#orders-pending{
+    background-color: #7CD1C0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+	</style>
+</head>
+<body>
+	<div class="row">
+		<div class="col">
+			<div class="col-md">
+				<div class="card text-center text-white  mb-3" id="total-orders">
+					  <div class="card-header">
+						  <h5 class="card-title">Total de Partenaires</h5>
+					  </div>
+					  <div class="card-body">
+						<h3 class="card-title">{{total_commandes}}</h3>
+					  </div>
+				</div>
+			</div>
+		</div>
+	
+		<div class="col">
+			<div class="col-md">
+				<div class="card text-center text-white  mb-3" id="orders-delivered">
+					  <div class="card-header">
+						  <h5 class="card-title">Total des Commandes</h5>
+					  </div>
+					  <div class="card-body">
+						<h3 class="card-title">{{livree}}</h3>
+					  </div>
+				</div>
+			</div>
+		</div>
+	
+	</div>
+</body>
+</html>
+

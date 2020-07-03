@@ -1,0 +1,43 @@
+{% extends 'app/main.html' %}
+
+{% block content %}
+<body style="background-color: black;">
+    <div style="border-radius: 9px;background-color: white;width: 1294px;margin-left: 23px;margin-top: 76px;">
+        <center><div class="col-md-9">
+            <h2 style="font-family: 'Dancing Script', cursive;margin-top: 40px;">Liste des Hoptaux:</h2>
+            <hr>
+            <div class="card card-body">
+                
+                <table class="table table-sm">
+                    <tr>
+                        <th>Nom</th>
+                        <th>Adresse</th>
+                        <th>Tel</th>
+                        <th>Email</th>
+                     
+                    </tr>
+                   
+                    {% for i in hopitaux %}
+                    
+                        <tr>
+                            <td>{{i.nom}}</td>
+                            <td>{{i.adress}}</td>
+                            <td>{{i.tel}}</td>
+                            <td>{{i.email}}</td>
+                        
+                       <td><a class="btn btn-sm btn-warning" href="{% url 'update_hopitaux' i.id %}">Modifier</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'delete_hopitaux' i.id %}">Supprimer</a></td>
+         
+                        </tr>
+                    
+                        {% endfor %}
+            
+                </table>
+            </div>
+        </div>
+        <br>
+        </center>
+    </div>
+</body>
+
+{% endblock %}

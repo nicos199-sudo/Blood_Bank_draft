@@ -1,0 +1,86 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+ </head>
+ <body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: 130px;">
+       
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}" style="font-family: 'Dancing Script', cursive;font-size: 15px;">Home</a>
+        </li>
+        {% if request.user.is_staff %}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" style="font-family: 'Dancing Script', cursive;font-size: 15px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Gestion des Partenaires
+          </a>
+          <div class="dropdown-menu" style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item"  style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" href="{% url 'create_hopitaux' %}">Ajouter le partenaire</a>
+            <a class="dropdown-item" style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" href="{% url 'liste_hopitaux' %}">Liste des partenaires </a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" style="font-family: 'Dancing Script', cursive;font-size: 15px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Gestion des Donateurs
+          </a>
+          <div class="dropdown-menu" style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item"  style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" href="{% url 'creer_donateur' %}">Ajouter le donateur</a>
+            <a class="dropdown-item" style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" href="{% url 'liste_donateur' %}">Liste des donateurs </a>
+          </div>
+        </li>
+
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" style="font-family: 'Dancing Script', cursive;font-size: 15px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Gestion de stock
+          </a>
+          <div class="dropdown-menu" style="font-family: 'Dancing Script', cursive;font-size: 15px;" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item"  style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" href="{% url 'creer_stock' %}">Ajouter au stock</a>
+            <a class="dropdown-item" style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" href="{% url 'stock' %}">Details stock</a>
+          </div>
+        </li>
+        <li class="nav-item ">
+          <a class="nav-link" href="{% url 'commandes' %}" style="font-family: 'Dancing Script', cursive;font-size: 15px;">Commandes</a>
+        </li>
+        <span style="margin-top: 9px;margin-left: 55px;color: white;font-family: 'Dancing Script', cursive;font-size: 15px;">salut, {{request.user}}</span>
+        
+        {% else %}
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}" style="font-family: 'Dancing Script', cursive;font-size: 15px;">About</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'home' %}" style="font-family: 'Dancing Script', cursive;font-size: 15px;">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" style="font-family: 'Dancing Script', cursive;font-size: 15px;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Gestion des Commandes
+          </a>
+          <div class="dropdown-menu" style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item"  style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" href="{% url 'create_commande' %}">passer une commande</a>
+            <a class="dropdown-item" style="font-family: 'Dancing Script', cursive;font-size: 15px;background-color: #000000;color: white;box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);" href="{% url 'commandes' %}">Liste des commandes </a>
+          </div>
+         
+           {% endif%}
+           
+         <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}" style="font-family: 'Dancing Script', cursive;margin-left:30px;font-size: 15px;">Logout</a>
+          </li>
+
+        
+          
+           
+      </ul>
+    </div>
+  </nav> 
+
+ </body>
+ </html>
+ 
+ 

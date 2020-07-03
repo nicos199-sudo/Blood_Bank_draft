@@ -1,0 +1,44 @@
+{% extends 'app/main.html' %}
+
+{% block content %}
+<body style="background-color: black;">
+    <div style="border-radius: 9px;background-color: white;width: 1294px;margin-left: 23px;margin-top: 76px;">
+        <center><div class="col-md-9">
+            <h2 style="font-family: 'Dancing Script', cursive;margin-top: 40px;">Liste des Commandes:</h2>
+            <hr>
+            <div class="card card-body">
+                
+                <table class="table table-sm">
+                    <tr>
+                        <th>Partenaire</th>
+                        <th>Groupe sanguin</th>
+                        <th>Date Commande</th>
+                        <th>Quantite commande</th>
+                      
+                    </tr>
+                   
+                    {% for i in commande %}
+                    
+                        <tr>
+                            <td>{{i.partenaire}}</td>
+                            <td>{{i.groupe_sanguin}}</td>
+                            <td>{{i.date_commande}}</td>
+                            <td>{{i.quantite_commande}}</td>
+                            
+                            
+                            <td><a class="btn btn-sm btn-warning" href="{% url 'update_commande' i.id %}">Modifier</a></td>
+                            <td><a class="btn btn-sm btn-danger" href="{% url 'delete_commande' i.id %}">Supprimer</a></td>
+        
+                        </tr>
+                    
+                        {% endfor %}
+            
+                </table>
+            </div>
+        </div>
+        <br>
+        </center>
+    </div>
+</body>
+
+{% endblock %}

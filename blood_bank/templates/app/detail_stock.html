@@ -1,0 +1,42 @@
+{% extends 'app/main.html' %}
+
+{% block content %}
+<body style="background-color: black;">
+    <div style="border-radius: 9px;background-color: white;width: 1294px;margin-left: 23px;margin-top: 76px;">
+        <center><div class="col-md-9">
+            <h2 style="font-family: 'Dancing Script', cursive;margin-top: 40px;">Detail du Stock:</h2>
+            <hr>
+            <div class="card card-body">
+                
+                <table class="table table-sm">
+                    <tr>
+                        <th>Groupe sanguin</th>
+                        <th>Quantite</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                    </tr>
+                   
+                    {% for i in stock %}
+                    
+                        <tr>
+                            <td>{{i.stock_groupe}}</td>
+                            <td>{{i.quantite}}</td>
+                            <td>{{i.date}}</td>
+                            <td>{{i.description}}</td>
+                         
+                            <td><a class="btn btn-sm btn-warning" href="{% url 'update_stock' i.id %}">Modifier</a></td>
+                            <td><a class="btn btn-sm btn-danger" href="{% url 'delete_stock' i.id %}">Supprimer</a></td>
+        
+                        </tr>
+                    
+                        {% endfor %}
+            
+                </table>
+            </div>
+        </div>
+        <br>
+        </center>
+    </div>
+</body>
+
+{% endblock %}
